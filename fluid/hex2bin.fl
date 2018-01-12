@@ -1,0 +1,48 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0304
+header_name {.h}
+code_name {.cxx}
+class UserInterface {open
+} {
+  Function {UserInterface()} {open
+  } {
+    Fl_Window main_window {
+      label {Копирование srec-файла в бинарный} open
+      xywh {857 122 695 746} type Double visible
+    } {
+      Fl_Table table {
+        tooltip {Для выбора опций используйте правую кнопку мыши} xywh {0 0 530 645}
+        code0 {\#include "MyTable.h"}
+        class MyHexBinTable
+      } {}
+      Fl_Output base_addr_oput {
+        label {Базовый адрес:}
+        tooltip {Отображает стартовый адрес размещения в ПЗУ} xywh {540 30 130 25} align 5
+      }
+      Fl_Output len_oput {
+        label {Длина массива:}
+        tooltip {Отображает общую длину массива в ПЗУ} xywh {540 75 130 25} align 5
+      }
+      Fl_Input_Choice inp_ch {
+        label {Байт заполнения:} open
+        tooltip {заполнение данным байтом незадействованных мест в ПЗУ} xywh {565 130 75 25} align 5
+      } {}
+      Fl_Button save_btn {
+        label {Сохранить}
+        tooltip {Сохранить массив в бинарном файле с расширением .bin} xywh {555 575 95 25} deactivate
+      }
+      Fl_Input input_file_edt {
+        label {файл:}
+        xywh {15 685 510 25} align 5
+      }
+      Fl_Button find_file_btn {
+        label {Поиск...}
+        tooltip {Поиск файла в файловой системе} xywh {530 685 70 25}
+      }
+      Fl_Button open_file_btn {
+        label {Открыть}
+        tooltip {Считывание данного файла в таблицу} xywh {605 685 70 25} deactivate
+      }
+    }
+  }
+}
