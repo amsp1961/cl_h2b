@@ -41,7 +41,8 @@ public:
     virtual void to_end_row();
     std::vector<unsigned char> vec;
     TABLE_TYPE _tp {_BT};
-    void change_type(TABLE_TYPE t);
+
+    virtual void change_type(TABLE_TYPE t);
     Fl_Menu_Button *m {};
 protected:
     virtual void draw_cell(TableContext context, int R = 0, int C = 0, int X = 0, int Y = 0, int W = 0, int H = 0);

@@ -11,8 +11,8 @@ private:
     HANDLE hComm;
 
 public:
-    com_port(const std::string&);
-    std::string GetError(void);
+    explicit com_port(const std::string&);
+    std::string GetError();
     HANDLE _GetHandle()
     {
         return hComm;
@@ -21,10 +21,10 @@ public:
     void WriteFile(const unsigned char* src, const unsigned long ln);
     void ReadFile(unsigned char* buf, unsigned long limit);
     unsigned int read(unsigned char* buf, unsigned int amnt);
-    DWORD BytesInReadBuf(void);
-    void ClearRxBuf(void);
+    DWORD BytesInReadBuf();
+    void ClearRxBuf();
     void SetBoud(unsigned long boud);
-    DCB GetDCB(void);
+    DCB GetDCB();
 
     virtual ~com_port();
 };

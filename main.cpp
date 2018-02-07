@@ -1,9 +1,8 @@
 
 #include <iostream>
 #include "Controller.h"
+
 using namespace std;
-
-
 /*
 void callback(void *p) {
     Controller *pc = reinterpret_cast<Controller *>(p);
@@ -17,8 +16,7 @@ void my_callback(Fl_Widget *, void *) {
 }
 */
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     try {
         Controller ctr;
 //        Fl::add_timeout(0.1, callback, &ctr);

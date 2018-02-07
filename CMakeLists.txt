@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.6.3)
 
 project(cl_h2b)
 
-#set (CMAKE_BUILD_TYPE MINSIZEREL)
+set (CMAKE_BUILD_TYPE relwithdebinfo)
 set (FLTK_SKIP_OPENGL true)
 set (FLTK_SKIP_FORMS true)
 set (FLTK_SKIP_IMAGES true)
@@ -13,10 +13,10 @@ if (NOT FLTK_FOUND)
     message (FATAL_ERROR "FLTK not found")
 endif (NOT FLTK_FOUND)
 message (STATUS "FLTK is found")
-
+message("CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
 #set (CMAKE_CXX_STANDART 11)
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -mwindows -DWIN32 -static -I${FLTK_INCLUDE_DIR}")
-#set (CMAKE_LINK_FLAGS "$(CMAKE_LINK_FLAGS}")
+#set (CMAKE_LINK_FLAGS "$(CMAKE_LINK_FLAGS} -s")
 #add_compile_options(-std=c++14)
 
 message(STATUS ${CMAKE_CXX_FLAGS})
